@@ -21,19 +21,18 @@ public class Main {
          * increase the size of the array ifinitely often, thus for testing reasons
          * we want to set a termination condition:
          * In the example below the resulting array shall have a size of at least
-         * 20 times the size of the original created array and afterwards the program
-         * shall terminate at the next opportunity.
+         * 10 times the size of the original created array.
          */
-        int terminationCondition = 20 * arrayOriginal.length;
+        int terminationCondition = 10 * arrayOriginal.length;
 
         for (int i = 0; i < size; i++) {
-            if (size >= terminationCondition) {
-                break;
-            }
             if (i >= size - 1 || j >= size - 1) { // when the current array has reached its full capacity
                 int[] newArray = new int[size * 2];
                 size = newArray.length;
                 for (j = 0; j < size; j++) {
+                    if(j == terminationCondition) {
+                        System.exit(0);
+                    }
                     newArray[j] = j + 1;
                     System.out.println(newArray[j]);
                 }

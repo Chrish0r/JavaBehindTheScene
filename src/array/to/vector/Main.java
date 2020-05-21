@@ -20,13 +20,20 @@ public class Main {
          * If no termination condition setted, then the program would effectively
          * increase the size of the array ifinitely often, thus for testing reasons
          * we want to set a termination condition:
-         * In the example below the resulting array shall have a size of at least
+         * In the example below the final array shall have a size of
          * 10 times the size of the original created array.
+         * The arrays inbetween have each double the size of the precursor array.
          */
         int terminationCondition = 10 * arrayOriginal.length;
+        int arrayId = 1;
+        String indent = "   ";
 
-        for (int i = 0; i < size; i++) {
-            if (i >= size - 1 || j >= size - 1) { // when the current array has reached its full capacity
+        System.out.println(arrayId + ". array:");
+        for (int i = 0; i <= size; i++) {
+            if (i >= size || j >= size) { // when the current array has reached its full capacity
+                arrayId = arrayId + 1;
+                System.out.println();
+                System.out.println(arrayId + ". array:");
                 int[] newArray = new int[size * 2];
                 size = newArray.length;
                 for (j = 0; j < size; j++) {
@@ -34,12 +41,11 @@ public class Main {
                         System.exit(0);
                     }
                     newArray[j] = j + 1;
-                    System.out.println(newArray[j]);
+                    System.out.print(indent + newArray[j]);
                 }
             } else {
                 array[i] = i + 1;
-                System.out.println(array[i]);
-
+                System.out.print(indent + array[i]);
             }
         }
     }

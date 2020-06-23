@@ -30,7 +30,7 @@ public class Main {
 
         System.out.println(arrayId + ". array:");
         for (int i = 0; i <= size; i++) {
-            if (i >= size || j >= size) { // when the current array has reached its full capacity
+            if (i >= size || j >= size) { // when the current array has reached finally its full capacity
                 arrayId = arrayId + 1;
                 System.out.println();
                 System.out.println(arrayId + ". array:");

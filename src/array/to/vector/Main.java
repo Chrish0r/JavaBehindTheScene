@@ -3,9 +3,9 @@ package array.to.vector;
 public class Main {
     /**
      * Internally a Vector of the Collection Framework works in the way, that whenever
-     * the full capacity of an array is reached
+     * the full capacity of an array is reached,
      * a new array will be created.
-     * This new array will have 2-times the size of the previous array and every element of the previous
+     * This new array will have 2-times the size of the previous array and each element of the previous
      * array will be copies/includeded i.e. added into the new created larger array.
      * This cycle will be repeated as often as needed.
      * Essentially this is how a vector works in Java.
